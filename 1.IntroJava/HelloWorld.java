@@ -11,5 +11,3 @@ public class HelloWorld {
  * 3. All statements in Java must end in a semi-colon.
  * 4. For code to run we need public static void main(String[] args){}
  */
-
- // dawd
