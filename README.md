@@ -5,7 +5,7 @@ This is a self-study class notes for CS61b Spring 2019 from Hug.
 All lecture Material are from: 
 
 
-<h1> Intro to Java </h1>
+<Title> Intro to Java </Title>
 
 <!-- 1.1 ----------------------------------------->
 
