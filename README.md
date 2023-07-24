@@ -1,8 +1,9 @@
 # CS61b
+Starting Date: July 23 2023
 
-This is a self-study class notes for CS61b Spring 2019 from Hug.
+** This is a self-study class notes for CS61b Spring 2019 from Hug. **
 
-All lecture Material are from: 
+*** All lecture Material are from: [CS61b_Hug](https://joshhug.gitbooks.io/hug61b/content/chap1/chap12.html) ***
 
 
 # Intro to Java 
