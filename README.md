@@ -33,3 +33,10 @@ Starting Date for this course: July 23 2023
  
 
 ## 1.2 Object
+
+# Static vs. Non-static
+1. Static methods are invoked using the class name, e.g. Dog.makeNoise();
+2. Instance methods are invoked using an instance name, e.g. Chihuahua.makeNoise();
+3. Static methods can't access "my" instance variables, because there is no "me".
+4. Static methods must access instance variables via a specific instance, e.g. d1 in Dog.java
+
