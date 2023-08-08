@@ -74,6 +74,17 @@ public class IntList {
         return Q;
     }
 
+    /** Add  x to the front of the list. */
+    public static IntList addFirst(IntList l, int x) {
+        l = new IntList(x, l);
+        return l;
+    }
+
+    /** Return the first item in the list.  */
+    public int getFirst(){
+        return this.first;
+    }
+
 
     public void printList(){
         IntList current = this;
@@ -89,32 +100,10 @@ public class IntList {
 
     public static void main(String[] args) {
         IntList L = new IntList(15, null);
-        L = new IntList(10, L);
-        L = new IntList(5, L);
-        L = new IntList(3, L);
-        L = new IntList(1, L);
+        L = addFirst(L, 10);
+        L = addFirst(L, 5);
 
-        System.out.println("Recursion Size: " + L.size());
-        System.out.println("Iteration Size: " + L.iterativeSize());
-        System.out.println("Get 3th item in the list: ");
-        System.out.println("Expected value: 10; Actual value: " + L.get(3));
+        System.out.println(L.getFirst());
 
-        System.out.println();
-
-        System.out.println("Test Increment List");
-        System.out.println("Orginal list: [1, 3, 5, 10, 15]");
-        System.out.println("Call method: incrList(L, 3);");
-        System.out.println("Expect value: [4, 6, 8, 13, 18]");
-        System.out.print("Actual value: ");
-        incrList(L, 3).printList();
-
-
-        System.out.println("Test Increment List (In Place)");
-        System.out.println("Orginal list: [1, 3, 5, 10, 15]");
-        System.out.println("Call method: incrList(L, 3);");
-        System.out.println("Expect value: [4, 6, 8, 13, 18]");
-        System.out.print("Actual value: ");
-        dincrList(L, 3).printList();
-        
     }
 }
