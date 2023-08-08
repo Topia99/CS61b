@@ -2,7 +2,7 @@
  * if the nakedness within.
  */
 public class SLList {
-    public IntNode first;
+    private IntNode first;
 
     public SLList(int x) {
         first = new IntNode(x, null);
