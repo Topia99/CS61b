@@ -40,3 +40,8 @@ Starting Date for this course: July 23 2023
 3. Static methods can't access "my" instance variables, because there is no "me".
 4. Static methods must access instance variables via a specific instance, e.g. d1 in Dog.java
 
+
+# 2.Lists
+
+## SLList.java
+

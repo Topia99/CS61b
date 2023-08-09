@@ -3,8 +3,14 @@
  */
 public class SLList {
 
-    /* In java, you can put classes inside a class */
-    public class IntNode {
+    /* In java, nested class is avaliable. 
+     * Made IntNode private because user doesn't
+     * need to know about it.
+     * 
+     * We can declare Intnode static, since it never uses
+     * any of SLList's instance variables or methods
+    */
+    private static class IntNode {
         public int item;
         public IntNode next;
     
