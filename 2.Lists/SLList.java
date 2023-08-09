@@ -37,11 +37,61 @@ public class SLList {
         return first.item;
     }
 
+    /** Adds x to the end of the list. */
+    public void addLast(int x) {
+        IntNode current = first;
+
+        // traverse current to the last item in the list
+        while (current.next != null){
+            current = current.next;
+        }
+
+        // create a new IntNode
+        IntNode newNode = new IntNode(x, null);
+
+        // current's next point to the newNode
+        current.next = newNode;
+    }
+
+    public int getSize() {
+        IntNode current = first;
+        int size = 0;
+
+        while (current != null){
+            size += 1;
+            current = current.next;
+        }
+
+        return size;
+    }
+
+    public String toString() {
+        IntNode current = first;
+        String str = "";
+
+        while (current != null){
+            if (current.next != null){
+                str += Integer.toString(current.item) + " -> ";
+            } else {
+                str += Integer.toString(current.item);
+            }
+
+            current = current.next;
+        }
+
+        return str;
+    }
+
      public static void main(String[] args){
         /* Creates a list of one integer, namely 10 */
-        SLList L = new SLList(10);
+        SLList L = new SLList(15);
         L.addFirst(10);
         L.addFirst(5);
-        System.out.println(L.getFirst());
+        L.addLast(20);
+        L.addLast(25);
+
+        System.out.println(L.toString());
+        System.out.println(L.getSize());
+
     }
 }
