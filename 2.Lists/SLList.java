@@ -22,14 +22,17 @@ public class SLList {
 
 
     private IntNode first;
+    private int size;
 
     public SLList(int x) {
         first = new IntNode(x, null);
+        size = 1;
     }
 
     /** Adds x to the front of the list.  */
     public void addFirst(int x) {
         first = new IntNode(x, first);
+        size += 1;
     }
 
     /** Returns the first item in the list.  */
@@ -41,27 +44,19 @@ public class SLList {
     public void addLast(int x) {
         IntNode current = first;
 
-        // traverse current to the last item in the list
+        // Move current to the end of the list
         while (current.next != null){
             current = current.next;
         }
 
-        // create a new IntNode
-        IntNode newNode = new IntNode(x, null);
+        // create a new IntNode and add to the next of current
+         current.next = new IntNode(x, null);
 
-        // current's next point to the newNode
-        current.next = newNode;
+         size += 1;
     }
 
-    public int getSize() {
-        IntNode current = first;
-        int size = 0;
-
-        while (current != null){
-            size += 1;
-            current = current.next;
-        }
-
+    /** Returns the size of the list. */
+    public int size() {
         return size;
     }
 
