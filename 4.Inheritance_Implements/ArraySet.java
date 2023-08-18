@@ -1,29 +1,11 @@
-public class ArraySet {
+public class ArraySet<T> {
     private T[] items;
     private int size;
 
      /** Copy everything from array A to array B */
      private void ArrayCopy(T[] A, T[] B){
-        /** 
-         * The head of the ArrayDeque can be at the end of the list.
-         * If head is at 0, just copy the whole array at once.
-         * Else, Copy from head to array.length first 
-         */
-        if (head == 0){
-            System.arraycopy(A, 0, B, 0, size);
-        } 
-        else {
-            if(head + size < A.length){
-                System.arraycopy(A, head, B, 0, size);
-            } else {
-                /** Copy first part of the array, from head to array.length */
-                int itemsBefore = A.length - head;
-                System.arraycopy(A, head, B, 0, itemsBefore);
-
-                /** Copy the rest of the items, from 0 to tail -1 */
-                System.arraycopy(A, 0, B, itemsBefore, tail);
-            }
-        }
+   
+        System.arraycopy(A, 0, B, 0, size);  
     }
 
     /** Resizes the array to size x */
@@ -34,30 +16,7 @@ public class ArraySet {
         // Copy everything from array items to array a
         ArrayCopy(items, a);
 
-
-        // Correct head and tail
-        head = 0;
-        tail = size;
-
         // Reassign reference of items to a
-        items = a;
-    }
-
-    /** Halve the  Array capacity. */
-    private void halve() {
-        int newSize = (int) items.length / 2;
-
-        // Create a new array of newSize
-        T[] a = (T[]) new Object[newSize];
-
-        // Copy everything from array items to array a
-        ArrayCopy(items, a);
-
-        // Correct head and tail
-        head = 0;
-        tail = size;
-
-        // Reassign referenceof items to a
         items = a;
     }
 
@@ -110,5 +69,34 @@ public class ArraySet {
         return false;
     }
 
+    /** returns an iterator to ME */
+    public Iterator<T> iterator() {
+        return ArraySetIterator;
+    }
 
+    private class ArraySetIterator implements Iterator<T> {
+        private int currentPos;
+        public boolean hasNext() {
+            return currentPos < size;
+        }
+
+        public T next() {
+            T item = items[currentPos];
+            return item;
+        }
+    }
+
+    public static void main(String[] args){
+        ArraySet<Integer> aset = new ArraySet<Integer>();
+        for(int i=0; i<10; i++){
+            aset.add(i);
+        }
+
+        Iterator<Integer> seer = aset.iterator();
+
+        while(seer.hasNext()){
+            int i = seer.next();
+            System.out.println(i);
+        }
+    }
 }
