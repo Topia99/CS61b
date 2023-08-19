@@ -41,7 +41,8 @@ Starting Date for this course: July 23 2023
 4. Static methods must access instance variables via a specific instance, e.g. d1 in Dog.java
 
 
-# 2.Lists
+# 4. Inheritance and Interfaces
 
-## SLList.java
+## Overloading
+Java allows multiple methods with same name, but different parameters.
 
